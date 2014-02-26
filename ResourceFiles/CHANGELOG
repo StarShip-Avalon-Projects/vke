@@ -1,0 +1,15 @@
+
+Verbots SDK CHANGELOG
+---------------------
+
+Changes Since Version 4.1.2.0:
+
+9/5/2006, version 4.1.2.1 - Updated mem.set command so that it works with quotes around the variable name
+
+9/27/2006, 4.1.3.0 - Now allows c# in Output.Cmd fields
+
+10/04/2006, no version update - Changes for Auto Synonym Detection Features
+
+1/22/3007 4.1.3.1 - Fix for CSV Expansion in the Output and Input Condition Fields.
+
+3/29/2007 4.1.3.2 - added new method: public Rule AddRule() in the KnowledgeBase.cs file, also added new Verbot Console App based on a very simple console app merlin981 started the code on

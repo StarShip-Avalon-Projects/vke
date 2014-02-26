@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Verbot Engine API Documentation</title>
+</head>
+<body>
+<h2>Namespace: Conversive.Verbot4</h2>
+<h3>(Important) Classes:</h3>
+<br />
+<a href="#class_reply">Reply</a><br />
+<a href="#class_state">State</a><br />
+<a href="#class_verbot4engine">Verbot4Engine</a><br />
+<br />
+<a name="class_reply"></a><h3>Reply Class</h3>
+<b>Overview:</b><br />
+The reply object represents the results of a call to Verbot4Engine.GetReply.<br />
+<b>Properties:</b><br />
+AgentText (string) - Text to be spoken (used with MS Agent)<br />
+Cmd (string) - Command text for the output<br />
+KBItem (KnowledgeBaseItem) - The KnowledgeBase that contains the matching rule<br />
+RuleId (string) - Id of the rule that fired<br />
+Text (string) - Output text to be displayed<br />
+<br />
+<b>Methods:</b><br />
+(nothing special, just those inherited from Object)<br />
+<br /><br />
+
+
+<a name="class_state"></a><h3>State Class</h3>
+<b>Overview:</b><br />
+One of the two main inputs to Verbot4Engine.GetReply.  Represents the current state for the engine including: the last rule to fire, current variables values, and active KnowledgeBases.<br />
+<b>Properties:</b><br />
+CurrentKBs (ArrayList) - ArrayList of strings that are the file paths to the active KnowledgeBases.<br />
+Lastfired (string) - Id of last rule to fire.<br />
+Lastinput (string) - Previous user input text.<br />
+LastRefreshedTime (DateTime) - The last time the state object was refreshed<br />
+Vars (Hashtable) - Hashtable representing the current engine variables.<br />
+<b>Methods:</b><br />
+void LoadVars(string filepath) - Loads a set of variables from the given file.<br />
+void SaveVars(string filepath) - Saves the current State.Vars to the given file.<br />
+<br />
+
+
+<a name="class_verbot4engine"></a><h3>Verbot4Engine Class</h3>
+<b>Overview:</b><br />
+The core Verbot Engine.  Is responsible for finding matches to a given user input and firing the appropriate rule.<br />
+<b>Properties:</b><br />
+(none)<br />
+<b>Methods:</b><br />
+CompiledKnowledgeBase AddCompiledKnowledgeBase(string stPath) - Loads a compiled KnowledgeBase from the given file path.<br />
+Reply GetReply(string input, State state) - Finds the best match in the available KnowledgeBase and fires the matching rule.  The "input" parameter is the user's input text, and the "state" paramere is the user's current state.
+<br />
+
+</body>
+</html>

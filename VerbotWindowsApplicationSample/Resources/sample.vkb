@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<KnowledgeBase xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Rules>
+    <Rule xsi:type="Rule">
+      <Inputs>
+        <Input xsi:type="Input">
+          <Id>4301B7E8FC5E4774</Id>
+          <Text>_startup</Text>
+        </Input>
+      </Inputs>
+      <Outputs>
+        <Output xsi:type="Output">
+          <Id>4301B7E8FC5E4774</Id>
+          <Text>Starting...</Text>
+          <Cmd />
+        </Output>
+      </Outputs>
+      <Children />
+      <VirtualParents />
+      <Id>E2D8E3BC9B7D6F0A</Id>
+      <Name>_startup</Name>
+    </Rule>
+    <Rule xsi:type="Rule">
+      <Inputs>
+        <Input xsi:type="Input">
+          <Id>1F76BCC0642F56A8</Id>
+          <Text>*</Text>
+        </Input>
+      </Inputs>
+      <Outputs>
+        <Output xsi:type="Output">
+          <Id>1F76BCC0642F56A8</Id>
+          <Text>default</Text>
+          <Cmd />
+        </Output>
+      </Outputs>
+      <Children />
+      <VirtualParents />
+      <Id>2ED158DAB20BAB0</Id>
+      <Name>* (default)</Name>
+    </Rule>
+    <Rule xsi:type="Rule">
+      <Inputs>
+        <Input xsi:type="Input">
+          <Id>6AE9DE5AE2A55C82</Id>
+          <Text>Notepad</Text>
+        </Input>
+      </Inputs>
+      <Outputs>
+        <Output xsi:type="Output">
+          <Id>6AE9DE5AE2A55C82</Id>
+          <Text>Running Notepad &lt;run notepad.exe&gt;</Text>
+          <Cmd />
+        </Output>
+      </Outputs>
+      <Children />
+      <VirtualParents />
+      <Id>F62F548412F24748</Id>
+      <Name>Notepad</Name>
+    </Rule>
+    <Rule xsi:type="Rule">
+      <Inputs>
+        <Input xsi:type="Input">
+          <Id>5893CE387FB9D5D6</Id>
+          <Text>Quit</Text>
+        </Input>
+      </Inputs>
+      <Outputs>
+        <Output xsi:type="Output">
+          <Id>5893CE387FB9D5D6</Id>
+          <Text>&lt;quit&gt;</Text>
+          <Cmd />
+        </Output>
+      </Outputs>
+      <Children />
+      <VirtualParents />
+      <Id>138B7D0B09FA080</Id>
+      <Name>Quit</Name>
+    </Rule>
+  </Rules>
+  <ResourceFiles />
+  <Info>
+    <Author />
+    <Copyright />
+    <License />
+    <AuthorWebsite />
+    <CreationDate>2004-11-13T11:31:06.7475312-08:00</CreationDate>
+    <LastUpdateDate>2004-12-13T16:09:54.3906250-08:00</LastUpdateDate>
+    <Rating>
+      <Rating>Unknown</Rating>
+      <Language>false</Language>
+      <Sexual>false</Sexual>
+      <Violence>false</Violence>
+      <Other>false</Other>
+      <Description />
+    </Rating>
+    <Category>Other</Category>
+    <Language>English</Language>
+    <Comment>Describe your KnowledgeBase here</Comment>
+  </Info>
+  <Version>1.0</Version>
+  <Build>2</Build>
+</KnowledgeBase>
