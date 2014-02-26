@@ -1,4 +1,0 @@
-C:\Users\Gerolkae\Documents\Visual Studio 2010\Projects\VerbotSDK_5.0.0.6\Verbot5Library\bin\Debug\Verbot5Library.dll
-C:\Users\Gerolkae\Documents\Visual Studio 2010\Projects\VerbotSDK_5.0.0.6\Verbot5Library\bin\Debug\Verbot5Library.pdb
-C:\Users\Gerolkae\Documents\Visual Studio 2010\Projects\VerbotSDK_5.0.0.6\Verbot5Library\obj\Debug\Verbot5Library.dll
-C:\Users\Gerolkae\Documents\Visual Studio 2010\Projects\VerbotSDK_5.0.0.6\Verbot5Library\obj\Debug\Verbot5Library.pdb
