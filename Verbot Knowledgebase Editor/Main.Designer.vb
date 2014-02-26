@@ -398,8 +398,8 @@ Partial Class Main
         'NewReplacementProfileToolStripMenuItem
         '
         Me.NewReplacementProfileToolStripMenuItem.Name = "NewReplacementProfileToolStripMenuItem"
-        Me.NewReplacementProfileToolStripMenuItem.Size = New System.Drawing.Size(193, 22)
-        Me.NewReplacementProfileToolStripMenuItem.Text = "New Replacement Profile"
+        Me.NewReplacementProfileToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.NewReplacementProfileToolStripMenuItem.Text = "Replacement Profile"
         '
         'Main
         '

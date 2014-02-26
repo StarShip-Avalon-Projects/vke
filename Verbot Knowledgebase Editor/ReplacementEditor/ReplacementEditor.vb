@@ -52,4 +52,8 @@ Public Class ReplacementEditor
             Next
         End If
     End Sub
+
+    Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+
+    End Sub
 End Class

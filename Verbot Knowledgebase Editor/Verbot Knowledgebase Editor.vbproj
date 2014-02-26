@@ -89,10 +89,16 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ReplacementEditor.Designer.vb">
+    <Compile Include="ReplacementEditor\InputReplacements.Designer.vb">
+      <DependentUpon>InputReplacements.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReplacementEditor\InputReplacements.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReplacementEditor\ReplacementEditor.Designer.vb">
       <DependentUpon>ReplacementEditor.vb</DependentUpon>
     </Compile>
-    <Compile Include="ReplacementEditor.vb">
+    <Compile Include="ReplacementEditor\ReplacementEditor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Input.Designer.vb">
@@ -130,7 +136,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="ReplacementEditor.resx">
+    <EmbeddedResource Include="ReplacementEditor\ReplacementEditor.resx">
       <DependentUpon>ReplacementEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Input.resx">

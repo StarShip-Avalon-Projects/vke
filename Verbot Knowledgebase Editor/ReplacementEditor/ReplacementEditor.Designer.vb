@@ -143,7 +143,7 @@ Partial Class ReplacementEditor
         '
         Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5, Me.ColumnHeader3, Me.ColumnHeader4})
         Me.ListView2.GridLines = True
-        Me.ListView2.Location = New System.Drawing.Point(0, 48)
+        Me.ListView2.Location = New System.Drawing.Point(6, 48)
         Me.ListView2.Name = "ListView2"
         Me.ListView2.Size = New System.Drawing.Size(333, 82)
         Me.ListView2.TabIndex = 7
