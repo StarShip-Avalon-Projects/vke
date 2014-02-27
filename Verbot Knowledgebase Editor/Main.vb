@@ -1,4 +1,5 @@
 ﻿Imports Conversive.Verbot5
+Imports System.IO
 
 Public Class Main
     Private verbot As Verbot5Engine = New Verbot5Engine()
@@ -17,13 +18,19 @@ Public Class Main
                 Dim xToolbox As XMLToolbox = New XMLToolbox(GetType(KnowledgeBase))
                 kb = xToolbox.LoadXML(.FileName)
                 FileName = .FileName
+                ListBox1.Items.Clear()
+                ListBox2.Items.Clear()
                 ListBox3.Items.Clear()
+                ListBox4.Items.Clear()
                 For i As Integer = 0 To kb.Rules.Count - 1
                     If String.IsNullOrEmpty(kb.Rules.Item(i).Name) Then
                         ListBox3.Items.Add(kb.Rules.Item(i).Id)
                     Else
                         ListBox3.Items.Add(kb.Rules.Item(i).Name)
                     End If
+                Next
+                For i As Integer = 0 To kb.ResourceFiles.Count - 1
+                    ListBox4.Items.Add(kb.ResourceFiles.Item(i))
                 Next
             End If
         End With
@@ -123,18 +130,19 @@ Public Class Main
     End Sub
 
     Private Sub Button7_Click(sender As System.Object, e As System.EventArgs) Handles Button7.Click
+        If ListBox3.SelectedIndex = -1 Then Exit Sub
         CurrentRule.Name = TextBox1.Text
-        ListBox3.Items.RemoveAt(ListBox1.SelectedIndex)
-        ListBox3.Items.Insert(ListBox1.SelectedIndex + 1, TextBox1.Text)
+        ListBox3.Items.RemoveAt(ListBox3.SelectedIndex)
+        ListBox3.Items.Insert(ListBox3.SelectedIndex + 1, TextBox1.Text)
     End Sub
 
     Private Sub Button9_Click(sender As System.Object, e As System.EventArgs) Handles Button9.Click
-        If ListBox1.SelectedIndex = -1 Then Exit Sub
+        If ListBox3.SelectedIndex = -1 Then Exit Sub
         CurrentRule = Nothing
         ListBox2.Items.Clear()
         ListBox1.Items.Clear()
-        kb.Rules.RemoveAt(ListBox1.SelectedIndex)
-        ListBox3.Items.RemoveAt(ListBox1.SelectedIndex)
+        kb.Rules.RemoveAt(ListBox3.SelectedIndex)
+        ListBox3.Items.RemoveAt(ListBox3.SelectedIndex)
     End Sub
 
     Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
@@ -153,25 +161,15 @@ Public Class Main
         With OpenFileDialog2
             If .ShowDialog = Windows.Forms.DialogResult.OK Then
                 Dim I As ResourceFile = New ResourceFile
-                I.Filename = .FileName
+                I.Filename = Path.GetFileName(.FileName)
                 I.Filetype = ResourceFileType.ReplacementProfileFile
                 kb.ResourceFiles.Add(I)
-                ListBox4.Items.Add(.FileName)
+                ListBox4.Items.Add(Path.GetFileName(.FileName))
             End If
         End With
     End Sub
 
-    Private Sub Button6_DoubleClick(sender As Object, e As System.EventArgs) Handles Button6.DoubleClick
 
-        With ReplacementEditor
-            .FileName = ListBox4.SelectedIndex
-            If .ShowDialog = Windows.Forms.DialogResult.OK Then
-                CurrentResourceFile = kb.ResourceFiles(ListBox4.SelectedIndex)
-                CurrentResourceFile.Filename = .FileName
-                CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
-            End If
-        End With
-    End Sub
 
     Private Sub NewReplacementProfileToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles NewReplacementProfileToolStripMenuItem.Click
         With ReplacementEditor
@@ -185,5 +183,28 @@ Public Class Main
                 ListBox4.Items.Add(.FileName)
             End If
         End With
+    End Sub
+
+    Private Sub ListBox4_DoubleClick(sender As Object, e As System.EventArgs) Handles ListBox4.DoubleClick
+        With ReplacementEditor
+            .FilePath = Path.GetDirectoryName(FileName)
+            .FileName = ListBox4.SelectedItem.ToString
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                CurrentResourceFile = kb.ResourceFiles.Item(ListBox4.SelectedIndex)
+                CurrentResourceFile.Filename = Path.GetFileName(.FileName)
+                Select Case Path.GetExtension(.FileName).ToLower
+                    Case ".rpp"
+                        CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
+                End Select
+
+
+            End If
+        End With
+    End Sub
+
+    Private Sub Button12_Click(sender As System.Object, e As System.EventArgs) Handles Button12.Click
+        If ListBox4.SelectedIndex = -1 Then Exit Sub
+        kb.ResourceFiles.RemoveAt(ListBox4.SelectedIndex)
+        ListBox4.Items.RemoveAt(ListBox4.SelectedIndex)
     End Sub
 End Class

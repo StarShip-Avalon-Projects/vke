@@ -34,6 +34,7 @@ Partial Class Main
         Me.SaveAsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NewReplacementProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -60,7 +61,6 @@ Partial Class Main
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
-        Me.NewReplacementProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -157,6 +157,12 @@ Partial Class Main
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
         Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
+        '
+        'NewReplacementProfileToolStripMenuItem
+        '
+        Me.NewReplacementProfileToolStripMenuItem.Name = "NewReplacementProfileToolStripMenuItem"
+        Me.NewReplacementProfileToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.NewReplacementProfileToolStripMenuItem.Text = "Replacement Profile"
         '
         'GroupBox2
         '
@@ -394,12 +400,6 @@ Partial Class Main
         Me.OpenFileDialog2.DefaultExt = "rpp"
         Me.OpenFileDialog2.FileName = "OpenFileDialog2"
         Me.OpenFileDialog2.Filter = "Replacement Profile | *.rpp"
-        '
-        'NewReplacementProfileToolStripMenuItem
-        '
-        Me.NewReplacementProfileToolStripMenuItem.Name = "NewReplacementProfileToolStripMenuItem"
-        Me.NewReplacementProfileToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
-        Me.NewReplacementProfileToolStripMenuItem.Text = "Replacement Profile"
         '
         'Main
         '

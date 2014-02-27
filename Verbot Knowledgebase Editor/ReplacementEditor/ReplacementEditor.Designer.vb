@@ -26,11 +26,17 @@ Partial Class ReplacementEditor
         Me.OK_Button = New System.Windows.Forms.Button()
         Me.Cancel_Button = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.ListView1 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
+        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.ListView2 = New System.Windows.Forms.ListView()
+        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader3 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.ColumnHeader4 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.Button3 = New System.Windows.Forms.Button()
@@ -41,12 +47,6 @@ Partial Class ReplacementEditor
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
-        Me.ColumnHeader5 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ListView1 = New System.Windows.Forms.ListView()
-        Me.ColumnHeader1 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader2 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader6 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
-        Me.ColumnHeader7 = CType(New System.Windows.Forms.ColumnHeader(), System.Windows.Forms.ColumnHeader)
         Me.TableLayoutPanel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -99,6 +99,36 @@ Partial Class ReplacementEditor
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Output Replacements"
         '
+        'ListView1
+        '
+        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader6, Me.ColumnHeader7})
+        Me.ListView1.GridLines = True
+        Me.ListView1.Location = New System.Drawing.Point(6, 48)
+        Me.ListView1.Name = "ListView1"
+        Me.ListView1.Size = New System.Drawing.Size(333, 82)
+        Me.ListView1.TabIndex = 8
+        Me.ListView1.UseCompatibleStateImageBehavior = False
+        Me.ListView1.View = System.Windows.Forms.View.Details
+        '
+        'ColumnHeader1
+        '
+        Me.ColumnHeader1.Text = "Index"
+        '
+        'ColumnHeader2
+        '
+        Me.ColumnHeader2.Text = "Find Text"
+        Me.ColumnHeader2.Width = 124
+        '
+        'ColumnHeader6
+        '
+        Me.ColumnHeader6.Text = "Output Text"
+        Me.ColumnHeader6.Width = 144
+        '
+        'ColumnHeader7
+        '
+        Me.ColumnHeader7.Text = "Text For Agent"
+        Me.ColumnHeader7.Width = 96
+        '
         'Button4
         '
         Me.Button4.Location = New System.Drawing.Point(264, 19)
@@ -150,6 +180,10 @@ Partial Class ReplacementEditor
         Me.ListView2.UseCompatibleStateImageBehavior = False
         Me.ListView2.View = System.Windows.Forms.View.Details
         '
+        'ColumnHeader5
+        '
+        Me.ColumnHeader5.Text = "Index"
+        '
         'ColumnHeader3
         '
         Me.ColumnHeader3.Text = "Find Text"
@@ -194,6 +228,12 @@ Partial Class ReplacementEditor
         Me.TextBox1.Size = New System.Drawing.Size(209, 20)
         Me.TextBox1.TabIndex = 4
         '
+        'SaveFileDialog1
+        '
+        Me.SaveFileDialog1.DefaultExt = "rpp"
+        Me.SaveFileDialog1.FileName = "default"
+        Me.SaveFileDialog1.Filter = "Replacement Profile Files | *.rpp"
+        '
         'Label1
         '
         Me.Label1.AutoSize = True
@@ -214,41 +254,9 @@ Partial Class ReplacementEditor
         '
         'OpenFileDialog1
         '
+        Me.OpenFileDialog1.DefaultExt = "rpp"
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        '
-        'ColumnHeader5
-        '
-        Me.ColumnHeader5.Text = "Index"
-        '
-        'ListView1
-        '
-        Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader6, Me.ColumnHeader7})
-        Me.ListView1.GridLines = True
-        Me.ListView1.Location = New System.Drawing.Point(6, 48)
-        Me.ListView1.Name = "ListView1"
-        Me.ListView1.Size = New System.Drawing.Size(333, 82)
-        Me.ListView1.TabIndex = 8
-        Me.ListView1.UseCompatibleStateImageBehavior = False
-        Me.ListView1.View = System.Windows.Forms.View.Details
-        '
-        'ColumnHeader1
-        '
-        Me.ColumnHeader1.Text = "Index"
-        '
-        'ColumnHeader2
-        '
-        Me.ColumnHeader2.Text = "Find Text"
-        Me.ColumnHeader2.Width = 124
-        '
-        'ColumnHeader6
-        '
-        Me.ColumnHeader6.Text = "Output Text"
-        Me.ColumnHeader6.Width = 144
-        '
-        'ColumnHeader7
-        '
-        Me.ColumnHeader7.Text = "Text For Agent"
-        Me.ColumnHeader7.Width = 96
+        Me.OpenFileDialog1.Filter = "Replacement Profile Files | *.rpp"
         '
         'ReplacementEditor
         '

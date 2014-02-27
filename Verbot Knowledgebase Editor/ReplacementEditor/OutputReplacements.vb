@@ -1,8 +1,9 @@
 ﻿Imports System.Windows.Forms
 Imports Conversive.Verbot5
 
-Public Class InputReplacements
-    Public IP As InputReplacement = New InputReplacement
+Public Class OutputReplacements
+
+    Public OP As Replacement = New Replacement
 
     Public Sub New()
 
@@ -12,17 +13,19 @@ Public Class InputReplacements
         ' Add any initialization after the InitializeComponent() call.
 
     End Sub
-    Public Sub New(ByRef IPs As InputReplacement)
-        IP = IPs
+    Public Sub New(ByRef OPs As Replacement)
+        OP = OPs
         ' This call is required by the designer.
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
     End Sub
-    Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
-        IP.TextToFind = TextBox1.Text
-        IP.TextToInput = TextBox2.Text
 
+    Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
+
+        OP.TextToFind = TextBox1.Text
+        OP.TextForOutput = TextBox2.Text
+        OP.TextForAgent = TextBox3.Text
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
