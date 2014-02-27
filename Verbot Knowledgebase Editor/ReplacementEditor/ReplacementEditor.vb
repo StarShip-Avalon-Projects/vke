@@ -87,11 +87,48 @@ Public Class ReplacementEditor
         With OP
             If .ShowDialog() = Windows.Forms.DialogResult.OK Then
                 Resource.Replacements.Add(.OP)
-                Dim item As ListViewItem = ListView2.Items.Add((ListView2.Items.Count + 1).ToString)
+                Dim item As ListViewItem = ListView1.Items.Add((ListView1.Items.Count + 1).ToString)
                 item.SubItems.Add(.OP.TextToFind)
                 item.SubItems.Add(.OP.TextForOutput)
                 item.SubItems.Add(.OP.TextForAgent)
             End If
         End With
+    End Sub
+
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+
+        Dim ip As New InputReplacements(Resource.InputReplacements.Item(ListView2.FocusedItem.Index))
+        With ip
+            If .ShowDialog() = Windows.Forms.DialogResult.OK Then
+                Resource.InputReplacements.Add(.IP)
+                Dim item As ListViewItem = ListView2.Items.Add((ListView2.Items.Count + 1).ToString)
+                item.SubItems.Add(.IP.TextToFind)
+                item.SubItems.Add(.IP.TextToInput)
+            End If
+        End With
+
+    End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        Dim OP As New OutputReplacements(Resource.Replacements.Item(ListView2.FocusedItem.Index))
+        With OP
+            If .ShowDialog() = Windows.Forms.DialogResult.OK Then
+                Resource.Replacements.Add(.OP)
+                Dim item As ListViewItem = ListView1.Items.Add((ListView1.FocusedItem.Index).ToString)
+                item.SubItems.Add(.OP.TextToFind)
+                item.SubItems.Add(.OP.TextForOutput)
+                item.SubItems.Add(.OP.TextForAgent)
+            End If
+        End With
+    End Sub
+
+    Private Sub Button3_Click(sender As System.Object, e As System.EventArgs) Handles Button3.Click
+        Resource.InputReplacements.RemoveAt(ListView2.FocusedItem.Index)
+        ListView2.Items.RemoveAt(ListView2.FocusedItem.Index)
+    End Sub
+
+    Private Sub Button4_Click(sender As System.Object, e As System.EventArgs) Handles Button4.Click
+        Resource.Replacements.RemoveAt(ListView1.FocusedItem.Index)
+        ListView1.Items.RemoveAt(ListView1.FocusedItem.Index)
     End Sub
 End Class

@@ -8,8 +8,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbotConsoleApplication", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Verbot5Library", "Verbot5Library\Verbot5Library.csproj", "{4D25B13B-4D67-433F-9181-BF5FDFA931B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VerbotInteropLibrary", "VerbotInteropLibrary\VerbotInteropLibrary.csproj", "{79F27019-6C0B-4488-9E56-7114542A1E2D}"
-EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ChatBot", "ChatBot\ChatBot.vbproj", "{000E1D36-CDD2-4191-A90D-08B29DB55452}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Verbot Knowledgebase Editor", "Verbot Knowledgebase Editor\Verbot Knowledgebase Editor.vbproj", "{5CC444CA-0A40-4AD2-82BB-884CCAA1289B}"
@@ -64,16 +62,6 @@ Global
 		{4D25B13B-4D67-433F-9181-BF5FDFA931B6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{4D25B13B-4D67-433F-9181-BF5FDFA931B6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{4D25B13B-4D67-433F-9181-BF5FDFA931B6}.Release|x86.ActiveCfg = Release|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{79F27019-6C0B-4488-9E56-7114542A1E2D}.Release|x86.ActiveCfg = Release|Any CPU
 		{000E1D36-CDD2-4191-A90D-08B29DB55452}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{000E1D36-CDD2-4191-A90D-08B29DB55452}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{000E1D36-CDD2-4191-A90D-08B29DB55452}.Debug|Mixed Platforms.Build.0 = Debug|x86
