@@ -37,7 +37,7 @@
     <DebugType>full</DebugType>
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\build\Debug\</OutputPath>
     <DocumentationFile>Verbot Knowledgebase Editor.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
@@ -48,7 +48,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\build\Release\</OutputPath>
     <DocumentationFile>Verbot Knowledgebase Editor.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <UseVSHostingProcess>false</UseVSHostingProcess>
@@ -64,6 +64,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Bookmark.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -89,10 +92,11 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="Module1.vb" />
+    <Compile Include="SynonymEditor.Designer.vb">
+      <DependentUpon>SynonymEditor.vb</DependentUpon>
     </Compile>
-    <Compile Include="Form1.vb">
+    <Compile Include="SynonymEditor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReplacementEditor\OutputReplacements.Designer.vb">
@@ -148,8 +152,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="SynonymEditor.resx">
+      <DependentUpon>SynonymEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReplacementEditor\OutputReplacements.resx">
       <DependentUpon>OutputReplacements.vb</DependentUpon>
@@ -216,7 +220,517 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="SynonymEditor\" />
+    <None Include="Resources\Folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Remove.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Add_Symbol.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application_Blueprint.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Application_Design.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Apps.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Archive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blackboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blackboard_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blocknotes.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blocknotes_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blocknotes_Blue.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blueprint.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blueprint_Blog.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blueprint_Website.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Book.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bookmark.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Box.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Back.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Down.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_FastForward.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_First.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Last.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Next.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Play_Pause.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Rec.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Rewind.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Shuffle.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Sync.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Up.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Calendar_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_3D_Ascending.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_3D_Descending.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_Big.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_Document.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_Files.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_Files_Wide.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Bar_Table.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Graph.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Graph_Ascending.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Graph_Descending.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Pie.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Chart_Vertical_Bar_Poll.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Checkmark.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ClapBoard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard_Empty.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard_Full.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clipboard_Full_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Clock.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Colors.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comment.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comment_Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comment_Bubble.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comment_Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Comment_Reply.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Conversation.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Dashboard.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Denided.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error_Symbol.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fav.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fav_Empty.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_AI_Illustrator.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_BMP_Image.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Checked.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Content.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_CSS_Stylesheet.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Doc_Text_Word.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_HTML.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_JPG_Image.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_List.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_MPMusic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_PDF_Acrobat.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_PHP.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_PNG_Image.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_PSD_Photoshop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Table.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Text.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_XLS_Excel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\File_ZIP_Archive.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Files.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Files_Copy.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Chart.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Checked.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Edit.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Empty.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Favorites.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Network.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Remove.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Sync.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Upload.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Folder_Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Gear.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Home2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iMac.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info_Light.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Location.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MacBook.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MacBookAir.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MacBookPro.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Compose.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Gmail.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Old.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Open.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Reply.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Verified.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mail_Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MailBox.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mails.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\News.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pencil_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Pin.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Project_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Rating.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sticky.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Target.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash_Delete.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash_Full.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash_Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\User2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Valid.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning_2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_3Cols.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_Header.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_List.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_ListView.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_Results.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_Sidebar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_SplitScreen.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_Splitscreen_3Columns.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_App_View.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_Config.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_Generic.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Window_Sidebar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Windows8.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wooden_Box.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Wooden_Box2.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom_In.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Zoom_Out.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

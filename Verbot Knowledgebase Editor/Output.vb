@@ -27,4 +27,9 @@ Public Class OutputWindow
         Me.Close()
     End Sub
 
+    Private Sub OutputWindow_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        TextBox1.Text = _CurrentOutput.Text
+        TextBox2.Text = _CurrentOutput.Condition
+        TextBox3.Text = _CurrentOutput.Cmd
+    End Sub
 End Class

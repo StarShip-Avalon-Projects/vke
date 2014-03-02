@@ -27,10 +27,10 @@ Partial Class OutputReplacements
         Me.Cancel_Button = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TxtBxTextToFind = New System.Windows.Forms.TextBox()
+        Me.TxtBxTextForOutput = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.TextBox3 = New System.Windows.Forms.TextBox()
+        Me.TxtBxReplacementText = New System.Windows.Forms.TextBox()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,32 +73,32 @@ Partial Class OutputReplacements
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 49)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(97, 13)
+        Me.Label2.Size = New System.Drawing.Size(84, 13)
         Me.Label2.TabIndex = 8
-        Me.Label2.Text = "Replacement Text:"
+        Me.Label2.Text = "Text For Output:"
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 10)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 13)
+        Me.Label1.Size = New System.Drawing.Size(66, 13)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Output to replace"
+        Me.Label1.Text = "Text to Find:"
         '
-        'TextBox2
+        'TxtBxTextToFind
         '
-        Me.TextBox2.Location = New System.Drawing.Point(15, 26)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox2.TabIndex = 6
+        Me.TxtBxTextToFind.Location = New System.Drawing.Point(15, 26)
+        Me.TxtBxTextToFind.Name = "TxtBxTextToFind"
+        Me.TxtBxTextToFind.Size = New System.Drawing.Size(176, 20)
+        Me.TxtBxTextToFind.TabIndex = 6
         '
-        'TextBox1
+        'TxtBxTextForOutput
         '
-        Me.TextBox1.Location = New System.Drawing.Point(15, 65)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox1.TabIndex = 5
+        Me.TxtBxTextForOutput.Location = New System.Drawing.Point(15, 65)
+        Me.TxtBxTextForOutput.Name = "TxtBxTextForOutput"
+        Me.TxtBxTextForOutput.Size = New System.Drawing.Size(176, 20)
+        Me.TxtBxTextForOutput.TabIndex = 5
         '
         'Label3
         '
@@ -109,14 +109,14 @@ Partial Class OutputReplacements
         Me.Label3.TabIndex = 10
         Me.Label3.Text = "Agent Replacement Text:"
         '
-        'TextBox3
+        'TxtBxReplacementText
         '
-        Me.TextBox3.Location = New System.Drawing.Point(15, 104)
-        Me.TextBox3.Name = "TextBox3"
-        Me.TextBox3.Size = New System.Drawing.Size(176, 20)
-        Me.TextBox3.TabIndex = 9
+        Me.TxtBxReplacementText.Location = New System.Drawing.Point(15, 104)
+        Me.TxtBxReplacementText.Name = "TxtBxReplacementText"
+        Me.TxtBxReplacementText.Size = New System.Drawing.Size(176, 20)
+        Me.TxtBxReplacementText.TabIndex = 9
         '
-        'InputReplacements
+        'OutputReplacements
         '
         Me.AcceptButton = Me.OK_Button
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -124,16 +124,16 @@ Partial Class OutputReplacements
         Me.CancelButton = Me.Cancel_Button
         Me.ClientSize = New System.Drawing.Size(211, 182)
         Me.Controls.Add(Me.Label3)
-        Me.Controls.Add(Me.TextBox3)
+        Me.Controls.Add(Me.TxtBxReplacementText)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox2)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.TxtBxTextToFind)
+        Me.Controls.Add(Me.TxtBxTextForOutput)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog
         Me.MaximizeBox = False
         Me.MinimizeBox = False
-        Me.Name = "InputReplacements"
+        Me.Name = "OutputReplacements"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Dialog1"
@@ -147,9 +147,9 @@ Partial Class OutputReplacements
     Friend WithEvents Cancel_Button As System.Windows.Forms.Button
     Friend WithEvents Label2 As System.Windows.Forms.Label
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents TextBox2 As System.Windows.Forms.TextBox
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents TxtBxTextToFind As System.Windows.Forms.TextBox
+    Friend WithEvents TxtBxTextForOutput As System.Windows.Forms.TextBox
     Friend WithEvents Label3 As System.Windows.Forms.Label
-    Friend WithEvents TextBox3 As System.Windows.Forms.TextBox
+    Friend WithEvents TxtBxReplacementText As System.Windows.Forms.TextBox
 
 End Class

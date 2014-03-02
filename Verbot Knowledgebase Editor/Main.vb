@@ -13,7 +13,7 @@ Public Class Main
 
         With OpenFileDialog1
             ' Select Character ini file
-
+            .InitialDirectory = myDocs
             If .ShowDialog = DialogResult.OK Then
                 Dim xToolbox As XMLToolbox = New XMLToolbox(GetType(KnowledgeBase))
                 kb = xToolbox.LoadXML(.FileName)
@@ -83,7 +83,7 @@ Public Class Main
     Private Sub SaveAsToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SaveAsToolStripMenuItem.Click
         With SaveFileDialog1
             ' Select Character ini file
-
+            .InitialDirectory = myDocs
             If .ShowDialog = DialogResult.OK Then
                 Dim xToolbox As XMLToolbox = New XMLToolbox(GetType(KnowledgeBase))
                 FileName = .FileName
@@ -159,10 +159,16 @@ Public Class Main
 
     Private Sub Button11_Click(sender As System.Object, e As System.EventArgs) Handles Button11.Click
         With OpenFileDialog2
+            .InitialDirectory = myDocs
             If .ShowDialog = Windows.Forms.DialogResult.OK Then
                 Dim I As ResourceFile = New ResourceFile
                 I.Filename = Path.GetFileName(.FileName)
-                I.Filetype = ResourceFileType.ReplacementProfileFile
+                Select Case Path.GetExtension(.FileName).ToLower
+                    Case ".rpp"
+                        CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
+                    Case ".sgp"
+                        CurrentResourceFile.Filetype = ResourceFileType.SynonymFile
+                End Select
                 kb.ResourceFiles.Add(I)
                 ListBox4.Items.Add(Path.GetFileName(.FileName))
             End If
@@ -178,7 +184,12 @@ Public Class Main
                 CurrentResourceFile = New ResourceFile
 
                 CurrentResourceFile.Filename = .FileName
-                CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
+                Select Case Path.GetExtension(.FileName).ToLower
+                    Case ".rpp"
+                        CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
+                    Case ".sgp"
+                        CurrentResourceFile.Filetype = ResourceFileType.SynonymFile
+                End Select
                 kb.ResourceFiles.Add(CurrentResourceFile)
                 ListBox4.Items.Add(.FileName)
             End If
@@ -186,25 +197,53 @@ Public Class Main
     End Sub
 
     Private Sub ListBox4_DoubleClick(sender As Object, e As System.EventArgs) Handles ListBox4.DoubleClick
-        With ReplacementEditor
-            .FilePath = Path.GetDirectoryName(FileName)
-            .FileName = ListBox4.SelectedItem.ToString
-            If .ShowDialog = Windows.Forms.DialogResult.OK Then
-                CurrentResourceFile = kb.ResourceFiles.Item(ListBox4.SelectedIndex)
-                CurrentResourceFile.Filename = Path.GetFileName(.FileName)
-                Select Case Path.GetExtension(.FileName).ToLower
-                    Case ".rpp"
-                        CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
-                End Select
+        CurrentResourceFile = kb.ResourceFiles.Item(ListBox4.SelectedIndex)
+        Select Case Path.GetExtension(kb.ResourceFiles.Item(ListBox4.SelectedIndex).Filename).ToLower
+            Case ".rpp"
+                CurrentResourceFile.Filetype = ResourceFileType.ReplacementProfileFile
+                With ReplacementEditor
+                    .FilePath = Path.GetDirectoryName(FileName)
+                    .FileName = ListBox4.SelectedItem.ToString
+                    If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                        CurrentResourceFile = kb.ResourceFiles.Item(ListBox4.SelectedIndex)
+                        CurrentResourceFile.Filename = Path.GetFileName(.FileName)
 
+                    End If
+                End With
+            Case ".sgp"
+                CurrentResourceFile.Filetype = ResourceFileType.SynonymFile
+                Dim Test As New SynonymEditor(Path.GetDirectoryName(FileName) & "\" & kb.ResourceFiles.Item(ListBox4.SelectedIndex).Filename)
+                Test.Show()
+                Test.Activate()
 
-            End If
-        End With
+        End Select
+
     End Sub
 
     Private Sub Button12_Click(sender As System.Object, e As System.EventArgs) Handles Button12.Click
         If ListBox4.SelectedIndex = -1 Then Exit Sub
         kb.ResourceFiles.RemoveAt(ListBox4.SelectedIndex)
         ListBox4.Items.RemoveAt(ListBox4.SelectedIndex)
+    End Sub
+
+    Private Sub SynonymEditorToolStripMenuItem_Click(sender As System.Object, e As System.EventArgs) Handles SynonymEditorToolStripMenuItem.Click
+
+        If Not IsNothing(SynonymEditor) Then
+            SynonymEditor.Dispose()
+        End If
+        SynonymEditor.Show()
+        SynonymEditor.Activate()
+    End Sub
+
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
+        If IsNothing(CurrentRule) Or ListBox2.SelectedIndex = -1 Then Exit Sub
+        Dim IPW As New OutputWindow(CurrentRule.Outputs.Item(ListBox2.SelectedIndex))
+        With IPW
+            If .ShowDialog = Windows.Forms.DialogResult.OK Then
+                CurrentRule.Outputs.Item(ListBox2.SelectedIndex) = IPW._CurrentOutput
+                ListBox2.Items.RemoveAt(ListBox2.SelectedIndex)
+                ListBox2.Items.Insert(ListBox2.SelectedIndex + 1, IPW._CurrentOutput.Text)
+            End If
+        End With
     End Sub
 End Class

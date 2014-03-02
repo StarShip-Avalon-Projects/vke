@@ -24,6 +24,7 @@ Public Class cbMain
         Me.state = New State()
 
         Me.openFileDialog1.Filter = Me.stCKBFileFilter
+        Me.openFileDialog1.InitialDirectory = myDocs
         Me.Text = Me.stFormName
     End Sub
 

@@ -3,7 +3,7 @@ Imports Conversive.Verbot5
 
 Public Class OutputReplacements
 
-    Public OP As Replacement = New Replacement
+    Public OP As Replacement
 
     Public Sub New()
 
@@ -11,7 +11,7 @@ Public Class OutputReplacements
         InitializeComponent()
 
         ' Add any initialization after the InitializeComponent() call.
-
+        OP = New Replacement
     End Sub
     Public Sub New(ByRef OPs As Replacement)
         OP = OPs
@@ -23,9 +23,9 @@ Public Class OutputReplacements
 
     Private Sub OK_Button_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles OK_Button.Click
 
-        OP.TextToFind = TextBox1.Text
-        OP.TextForOutput = TextBox2.Text
-        OP.TextForAgent = TextBox3.Text
+        OP.TextToFind = TxtBxTextToFind.Text
+        OP.TextForOutput = TxtBxTextForOutput.Text
+        OP.TextForAgent = TxtBxReplacementText.Text
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
@@ -35,4 +35,9 @@ Public Class OutputReplacements
         Me.Close()
     End Sub
 
+    Private Sub OutputReplacements_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        TxtBxTextToFind.Text = OP.TextToFind
+        TxtBxTextForOutput.Text = OP.TextForOutput
+        TxtBxReplacementText.Text = OP.TextForAgent
+    End Sub
 End Class

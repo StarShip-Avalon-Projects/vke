@@ -29,7 +29,7 @@ Public Class ReplacementEditor
             End With
         End If
         Dim xToolbox As XMLToolbox = New XMLToolbox(GetType(ReplacementProfile))
-        xToolbox.SaveXML(Resource, FileName)
+        xToolbox.SaveXML(Resource, FilePath + "\" + FileName)
         Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
@@ -44,7 +44,8 @@ Public Class ReplacementEditor
             TextBox1.Text = FilePath + "\" + FileName
             Dim xToolbox As XMLToolbox = New XMLToolbox(GetType(ReplacementProfile))
             Resource = xToolbox.LoadXML(FilePath + "\" + FileName)
-
+            ListView2.Items.Clear()
+            ListView1.Items.Clear()
             For i As Integer = 0 To Resource.InputReplacements.Count - 1
                 Dim item As ListViewItem = ListView2.Items.Add(i.ToString)
                 item.SubItems.Add(Resource.InputReplacements.Item(i).TextToFind)
@@ -75,7 +76,7 @@ Public Class ReplacementEditor
         With ip
             If .ShowDialog() = Windows.Forms.DialogResult.OK Then
                 Resource.InputReplacements.Add(.IP)
-                Dim item As ListViewItem = ListView2.Items.Add((ListView2.Items.Count + 1).ToString)
+                Dim item As ListViewItem = ListView2.Items.Item((ListView2.Items.Count + 1).ToString)
                 item.SubItems.Add(.IP.TextToFind)
                 item.SubItems.Add(.IP.TextToInput)
             End If
@@ -86,38 +87,39 @@ Public Class ReplacementEditor
         Dim OP As New OutputReplacements
         With OP
             If .ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Resource.Replacements.Add(.OP)
+
                 Dim item As ListViewItem = ListView1.Items.Add((ListView1.Items.Count + 1).ToString)
                 item.SubItems.Add(.OP.TextToFind)
                 item.SubItems.Add(.OP.TextForOutput)
                 item.SubItems.Add(.OP.TextForAgent)
+                Resource.Replacements.Add(.OP)
             End If
         End With
     End Sub
 
-    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As System.Object, e As System.EventArgs) Handles Button2.Click, ListView2.DoubleClick
 
         Dim ip As New InputReplacements(Resource.InputReplacements.Item(ListView2.FocusedItem.Index))
         With ip
             If .ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Resource.InputReplacements.Add(.IP)
-                Dim item As ListViewItem = ListView2.Items.Add((ListView2.Items.Count + 1).ToString)
-                item.SubItems.Add(.IP.TextToFind)
-                item.SubItems.Add(.IP.TextToInput)
+                ip.IP = Resource.InputReplacements.Item(ListView2.FocusedItem.Index)
+                Dim item As ListViewItem = ListView2.Items.Item(ListView2.FocusedItem.Index)
+                item.SubItems.Item(1).Text = .IP.TextToFind
+                item.SubItems.Item(2).Text = .IP.TextToInput
             End If
         End With
 
     End Sub
 
-    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click
-        Dim OP As New OutputReplacements(Resource.Replacements.Item(ListView2.FocusedItem.Index))
+    Private Sub Button5_Click(sender As System.Object, e As System.EventArgs) Handles Button5.Click, ListView1.DoubleClick
+        Dim OP As New OutputReplacements(Resource.Replacements.Item(ListView1.FocusedItem.Index))
         With OP
             If .ShowDialog() = Windows.Forms.DialogResult.OK Then
-                Resource.Replacements.Add(.OP)
-                Dim item As ListViewItem = ListView1.Items.Add((ListView1.FocusedItem.Index).ToString)
-                item.SubItems.Add(.OP.TextToFind)
-                item.SubItems.Add(.OP.TextForOutput)
-                item.SubItems.Add(.OP.TextForAgent)
+                Dim item As ListViewItem = ListView1.Items.Item(ListView1.FocusedItem.Index)
+                item.SubItems.Item(1).Text = .OP.TextToFind
+                item.SubItems.Item(2).Text = .OP.TextForOutput
+                item.SubItems.Item(3).Text = .OP.TextForAgent
+                Resource.Replacements.Item(ListView1.FocusedItem.Index) = .OP
             End If
         End With
     End Sub

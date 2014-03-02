@@ -23,8 +23,6 @@ Partial Class cbMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.outputTextBox = New System.Windows.Forms.TextBox()
         Me.getReplyButton = New System.Windows.Forms.Button()
         Me.inputTextBox = New System.Windows.Forms.TextBox()
@@ -36,41 +34,24 @@ Partial Class cbMain
         Me.exitMenuItem = New System.Windows.Forms.MenuItem()
         Me.helpMenuItem = New System.Windows.Forms.MenuItem()
         Me.aboutMenuItem = New System.Windows.Forms.MenuItem()
-        Me.SuspendLayout()
-        '
-        'TextBox1
-        '
-        Me.TextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.TextBox1.Location = New System.Drawing.Point(82, 12)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(238, 20)
-        Me.TextBox1.TabIndex = 0
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(67, 13)
-        Me.Label1.TabIndex = 5
-        Me.Label1.Text = "Player Name"
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.SuspendLayout
         '
         'outputTextBox
         '
-        Me.outputTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.outputTextBox.Location = New System.Drawing.Point(0, 64)
-        Me.outputTextBox.Multiline = True
+        Me.outputTextBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom)  _
+            Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.outputTextBox.Location = New System.Drawing.Point(0, 38)
+        Me.outputTextBox.Multiline = true
         Me.outputTextBox.Name = "outputTextBox"
-        Me.outputTextBox.Size = New System.Drawing.Size(383, 221)
+        Me.outputTextBox.Size = New System.Drawing.Size(363, 247)
         Me.outputTextBox.TabIndex = 8
         '
         'getReplyButton
         '
-        Me.getReplyButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.getReplyButton.Location = New System.Drawing.Point(324, 38)
+        Me.getReplyButton.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.getReplyButton.Location = New System.Drawing.Point(304, 12)
         Me.getReplyButton.Name = "getReplyButton"
         Me.getReplyButton.Size = New System.Drawing.Size(48, 20)
         Me.getReplyButton.TabIndex = 7
@@ -78,11 +59,11 @@ Partial Class cbMain
         '
         'inputTextBox
         '
-        Me.inputTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.inputTextBox.Location = New System.Drawing.Point(12, 38)
+        Me.inputTextBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left)  _
+            Or System.Windows.Forms.AnchorStyles.Right),System.Windows.Forms.AnchorStyles)
+        Me.inputTextBox.Location = New System.Drawing.Point(48, 12)
         Me.inputTextBox.Name = "inputTextBox"
-        Me.inputTextBox.Size = New System.Drawing.Size(306, 20)
+        Me.inputTextBox.Size = New System.Drawing.Size(250, 20)
         Me.inputTextBox.TabIndex = 6
         '
         'openFileDialog1
@@ -127,25 +108,31 @@ Partial Class cbMain
         Me.aboutMenuItem.Index = 0
         Me.aboutMenuItem.Text = "About"
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = true
+        Me.Label2.Location = New System.Drawing.Point(8, 16)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(34, 13)
+        Me.Label2.TabIndex = 9
+        Me.Label2.Text = "Input:"
+        '
         'cbMain
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6!, 13!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(383, 297)
+        Me.ClientSize = New System.Drawing.Size(364, 297)
+        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.outputTextBox)
         Me.Controls.Add(Me.getReplyButton)
         Me.Controls.Add(Me.inputTextBox)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.TextBox1)
         Me.Menu = Me.mainMenu
         Me.Name = "cbMain"
         Me.Text = "Form1"
-        Me.ResumeLayout(False)
-        Me.PerformLayout()
+        Me.ResumeLayout(false)
+        Me.PerformLayout
 
-    End Sub
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+End Sub
     Private WithEvents outputTextBox As System.Windows.Forms.TextBox
     Private WithEvents getReplyButton As System.Windows.Forms.Button
     Private WithEvents inputTextBox As System.Windows.Forms.TextBox
@@ -157,5 +144,6 @@ Partial Class cbMain
     Private WithEvents exitMenuItem As System.Windows.Forms.MenuItem
     Private WithEvents helpMenuItem As System.Windows.Forms.MenuItem
     Private WithEvents aboutMenuItem As System.Windows.Forms.MenuItem
+    Friend WithEvents Label2 As System.Windows.Forms.Label
 
 End Class

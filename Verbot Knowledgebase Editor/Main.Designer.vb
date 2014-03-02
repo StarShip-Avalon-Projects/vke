@@ -35,6 +35,7 @@ Partial Class Main
         Me.SaveToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.NewReplacementProfileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SynonymEditorToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
@@ -153,7 +154,7 @@ Partial Class Main
         '
         'ToolsToolStripMenuItem
         '
-        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewReplacementProfileToolStripMenuItem})
+        Me.ToolsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NewReplacementProfileToolStripMenuItem, Me.SynonymEditorToolStripMenuItem})
         Me.ToolsToolStripMenuItem.Name = "ToolsToolStripMenuItem"
         Me.ToolsToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.ToolsToolStripMenuItem.Text = "Tools"
@@ -163,6 +164,12 @@ Partial Class Main
         Me.NewReplacementProfileToolStripMenuItem.Name = "NewReplacementProfileToolStripMenuItem"
         Me.NewReplacementProfileToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
         Me.NewReplacementProfileToolStripMenuItem.Text = "Replacement Profile"
+        '
+        'SynonymEditorToolStripMenuItem
+        '
+        Me.SynonymEditorToolStripMenuItem.Name = "SynonymEditorToolStripMenuItem"
+        Me.SynonymEditorToolStripMenuItem.Size = New System.Drawing.Size(169, 22)
+        Me.SynonymEditorToolStripMenuItem.Text = "Synonym Editor"
         '
         'GroupBox2
         '
@@ -230,7 +237,7 @@ Partial Class Main
         '
         'Button10
         '
-        Me.Button10.Location = New System.Drawing.Point(167, 44)
+        Me.Button10.Location = New System.Drawing.Point(167, 29)
         Me.Button10.Name = "Button10"
         Me.Button10.Size = New System.Drawing.Size(75, 23)
         Me.Button10.TabIndex = 7
@@ -240,7 +247,7 @@ Partial Class Main
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 26)
+        Me.Label1.Location = New System.Drawing.Point(6, 16)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(63, 13)
         Me.Label1.TabIndex = 4
@@ -248,7 +255,7 @@ Partial Class Main
         '
         'Button9
         '
-        Me.Button9.Location = New System.Drawing.Point(167, 73)
+        Me.Button9.Location = New System.Drawing.Point(167, 58)
         Me.Button9.Name = "Button9"
         Me.Button9.Size = New System.Drawing.Size(75, 23)
         Me.Button9.TabIndex = 4
@@ -258,7 +265,7 @@ Partial Class Main
         'TextBox1
         '
         Me.TextBox1.AcceptsReturn = True
-        Me.TextBox1.Location = New System.Drawing.Point(6, 47)
+        Me.TextBox1.Location = New System.Drawing.Point(6, 32)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(155, 20)
         Me.TextBox1.TabIndex = 6
@@ -266,7 +273,7 @@ Partial Class Main
         'Button8
         '
         Me.Button8.Enabled = False
-        Me.Button8.Location = New System.Drawing.Point(96, 73)
+        Me.Button8.Location = New System.Drawing.Point(96, 58)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(65, 23)
         Me.Button8.TabIndex = 4
@@ -275,7 +282,7 @@ Partial Class Main
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(6, 73)
+        Me.Button7.Location = New System.Drawing.Point(6, 58)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(84, 23)
         Me.Button7.TabIndex = 4
@@ -285,9 +292,9 @@ Partial Class Main
         'ListBox3
         '
         Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(6, 107)
+        Me.ListBox3.Location = New System.Drawing.Point(6, 87)
         Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(236, 355)
+        Me.ListBox3.Size = New System.Drawing.Size(236, 368)
         Me.ListBox3.TabIndex = 4
         '
         'SaveFileDialog1
@@ -398,8 +405,8 @@ Partial Class Main
         'OpenFileDialog2
         '
         Me.OpenFileDialog2.DefaultExt = "rpp"
-        Me.OpenFileDialog2.FileName = "OpenFileDialog2"
-        Me.OpenFileDialog2.Filter = "Replacement Profile | *.rpp"
+        Me.OpenFileDialog2.FileName = "Default"
+        Me.OpenFileDialog2.Filter = "Resource Files| *.rpp;*.sgp; *.csv"
         '
         'Main
         '
@@ -469,4 +476,5 @@ Partial Class Main
     Friend WithEvents ToolsToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents NewReplacementProfileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents SynonymEditorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

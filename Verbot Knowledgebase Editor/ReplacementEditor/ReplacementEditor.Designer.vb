@@ -102,8 +102,10 @@ Partial Class ReplacementEditor
         'ListView1
         '
         Me.ListView1.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader1, Me.ColumnHeader2, Me.ColumnHeader6, Me.ColumnHeader7})
+        Me.ListView1.FullRowSelect = True
         Me.ListView1.GridLines = True
         Me.ListView1.Location = New System.Drawing.Point(6, 48)
+        Me.ListView1.MultiSelect = False
         Me.ListView1.Name = "ListView1"
         Me.ListView1.Size = New System.Drawing.Size(333, 82)
         Me.ListView1.TabIndex = 8
@@ -172,8 +174,10 @@ Partial Class ReplacementEditor
         'ListView2
         '
         Me.ListView2.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.ColumnHeader5, Me.ColumnHeader3, Me.ColumnHeader4})
+        Me.ListView2.FullRowSelect = True
         Me.ListView2.GridLines = True
         Me.ListView2.Location = New System.Drawing.Point(6, 48)
+        Me.ListView2.MultiSelect = False
         Me.ListView2.Name = "ListView2"
         Me.ListView2.Size = New System.Drawing.Size(333, 82)
         Me.ListView2.TabIndex = 7

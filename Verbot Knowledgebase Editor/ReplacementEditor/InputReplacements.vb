@@ -32,4 +32,8 @@ Public Class InputReplacements
         Me.Close()
     End Sub
 
+    Private Sub InputReplacements_Load(sender As Object, e As System.EventArgs) Handles Me.Load
+        TextBox1.Text = IP.TextToFind
+        TextBox2.Text = IP.TextToInput
+    End Sub
 End Class
