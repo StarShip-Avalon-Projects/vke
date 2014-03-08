@@ -234,9 +234,9 @@ Partial Class ReplacementEditor
         '
         'SaveFileDialog1
         '
-        Me.SaveFileDialog1.DefaultExt = "rpp"
+        Me.SaveFileDialog1.DefaultExt = "vrp"
         Me.SaveFileDialog1.FileName = "default"
-        Me.SaveFileDialog1.Filter = "Replacement Profile Files | *.rpp"
+        Me.SaveFileDialog1.Filter = "Replacement Profile Files | *.rpp;*.vrp"
         '
         'Label1
         '
@@ -258,9 +258,9 @@ Partial Class ReplacementEditor
         '
         'OpenFileDialog1
         '
-        Me.OpenFileDialog1.DefaultExt = "rpp"
+        Me.OpenFileDialog1.DefaultExt = "vrp"
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
-        Me.OpenFileDialog1.Filter = "Replacement Profile Files | *.rpp"
+        Me.OpenFileDialog1.Filter = "Replacement Profile Files | *.rpp;*.vrp"
         '
         'ReplacementEditor
         '

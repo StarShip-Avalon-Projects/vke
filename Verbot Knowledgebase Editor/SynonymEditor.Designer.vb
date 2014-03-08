@@ -271,25 +271,25 @@ Partial Class SynonymEditor
         'NewToolStripMenuItem
         '
         Me.NewToolStripMenuItem.Name = "NewToolStripMenuItem"
-        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.NewToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.NewToolStripMenuItem.Text = "New "
         '
         'OpenToolStripMenuItem
         '
         Me.OpenToolStripMenuItem.Name = "OpenToolStripMenuItem"
-        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.OpenToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.OpenToolStripMenuItem.Text = "Open"
         '
         'SaveAsToolStripMenuItem
         '
         Me.SaveAsToolStripMenuItem.Name = "SaveAsToolStripMenuItem"
-        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SaveAsToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.SaveAsToolStripMenuItem.Text = "Save As"
         '
         'SaveToolStripMenuItem
         '
         Me.SaveToolStripMenuItem.Name = "SaveToolStripMenuItem"
-        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.SaveToolStripMenuItem.Size = New System.Drawing.Size(113, 22)
         Me.SaveToolStripMenuItem.Text = "Save"
         '
         'ToolStrip1
@@ -330,13 +330,15 @@ Partial Class SynonymEditor
         '
         'SaveFileDialog1
         '
-        Me.SaveFileDialog1.DefaultExt = "sgp"
+        Me.SaveFileDialog1.DefaultExt = "vsn"
         Me.SaveFileDialog1.FileName = "Default"
-        Me.SaveFileDialog1.Filter = "Synonym Group Files |*.sgp"
+        Me.SaveFileDialog1.Filter = "Synonym Group Files |*.sgp;*.vsn"
         '
         'OpenFileDialog1
         '
+        Me.OpenFileDialog1.DefaultExt = "vsn"
         Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.OpenFileDialog1.Filter = "Synonym Group Files |*.sgp;*.vsn"
         '
         'SynonymEditor
         '

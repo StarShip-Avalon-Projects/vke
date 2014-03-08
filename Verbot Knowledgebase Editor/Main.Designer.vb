@@ -22,6 +22,7 @@ Partial Class Main
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Main))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -42,13 +43,13 @@ Partial Class Main
         Me.Button6 = New System.Windows.Forms.Button()
         Me.ListBox2 = New System.Windows.Forms.ListBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.TreeView1 = New System.Windows.Forms.TreeView()
         Me.Button10 = New System.Windows.Forms.Button()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button9 = New System.Windows.Forms.Button()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button8 = New System.Windows.Forms.Button()
         Me.Button7 = New System.Windows.Forms.Button()
-        Me.ListBox3 = New System.Windows.Forms.ListBox()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
@@ -62,12 +63,16 @@ Partial Class Main
         Me.Button11 = New System.Windows.Forms.Button()
         Me.Button13 = New System.Windows.Forms.Button()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
+        Me.TreeMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PasteRuleToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox1.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.ToolStrip1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
+        Me.TreeMenu.SuspendLayout()
         Me.SuspendLayout()
         '
         'GroupBox1
@@ -221,19 +226,27 @@ Partial Class Main
         '
         'GroupBox3
         '
+        Me.GroupBox3.Controls.Add(Me.TreeView1)
         Me.GroupBox3.Controls.Add(Me.Button10)
         Me.GroupBox3.Controls.Add(Me.Label1)
         Me.GroupBox3.Controls.Add(Me.Button9)
         Me.GroupBox3.Controls.Add(Me.TextBox1)
         Me.GroupBox3.Controls.Add(Me.Button8)
         Me.GroupBox3.Controls.Add(Me.Button7)
-        Me.GroupBox3.Controls.Add(Me.ListBox3)
         Me.GroupBox3.Location = New System.Drawing.Point(12, 52)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(248, 468)
         Me.GroupBox3.TabIndex = 4
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Rules"
+        '
+        'TreeView1
+        '
+        Me.TreeView1.ContextMenuStrip = Me.TreeMenu
+        Me.TreeView1.Location = New System.Drawing.Point(6, 87)
+        Me.TreeView1.Name = "TreeView1"
+        Me.TreeView1.Size = New System.Drawing.Size(236, 375)
+        Me.TreeView1.TabIndex = 4
         '
         'Button10
         '
@@ -272,7 +285,6 @@ Partial Class Main
         '
         'Button8
         '
-        Me.Button8.Enabled = False
         Me.Button8.Location = New System.Drawing.Point(96, 58)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(65, 23)
@@ -288,14 +300,6 @@ Partial Class Main
         Me.Button7.TabIndex = 4
         Me.Button7.Text = "Rename Rule"
         Me.Button7.UseVisualStyleBackColor = True
-        '
-        'ListBox3
-        '
-        Me.ListBox3.FormattingEnabled = True
-        Me.ListBox3.Location = New System.Drawing.Point(6, 87)
-        Me.ListBox3.Name = "ListBox3"
-        Me.ListBox3.Size = New System.Drawing.Size(236, 368)
-        Me.ListBox3.TabIndex = 4
         '
         'SaveFileDialog1
         '
@@ -394,7 +398,6 @@ Partial Class Main
         '
         'Button13
         '
-        Me.Button13.Enabled = False
         Me.Button13.Location = New System.Drawing.Point(272, 497)
         Me.Button13.Name = "Button13"
         Me.Button13.Size = New System.Drawing.Size(120, 23)
@@ -404,9 +407,27 @@ Partial Class Main
         '
         'OpenFileDialog2
         '
-        Me.OpenFileDialog2.DefaultExt = "rpp"
+        Me.OpenFileDialog2.DefaultExt = "vrp"
         Me.OpenFileDialog2.FileName = "Default"
-        Me.OpenFileDialog2.Filter = "Resource Files| *.rpp;*.sgp; *.csv"
+        Me.OpenFileDialog2.Filter = "Resource Files| *.rpp;*.sgp; *.csv; *.vrp;*.vsn"
+        '
+        'TreeMenu
+        '
+        Me.TreeMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CopyToolStripMenuItem, Me.PasteRuleToolStripMenuItem})
+        Me.TreeMenu.Name = "TreeMenu"
+        Me.TreeMenu.Size = New System.Drawing.Size(126, 48)
+        '
+        'CopyToolStripMenuItem
+        '
+        Me.CopyToolStripMenuItem.Name = "CopyToolStripMenuItem"
+        Me.CopyToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.CopyToolStripMenuItem.Text = "Copy Rule"
+        '
+        'PasteRuleToolStripMenuItem
+        '
+        Me.PasteRuleToolStripMenuItem.Name = "PasteRuleToolStripMenuItem"
+        Me.PasteRuleToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.PasteRuleToolStripMenuItem.Text = "Paste Rule"
         '
         'Main
         '
@@ -434,6 +455,7 @@ Partial Class Main
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
+        Me.TreeMenu.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -456,7 +478,6 @@ Partial Class Main
     Friend WithEvents GroupBox3 As System.Windows.Forms.GroupBox
     Friend WithEvents Button8 As System.Windows.Forms.Button
     Friend WithEvents Button7 As System.Windows.Forms.Button
-    Friend WithEvents ListBox3 As System.Windows.Forms.ListBox
     Friend WithEvents SaveFileDialog1 As System.Windows.Forms.SaveFileDialog
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents ToolStrip1 As System.Windows.Forms.ToolStrip
@@ -477,4 +498,8 @@ Partial Class Main
     Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents NewReplacementProfileToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents SynonymEditorToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents TreeView1 As System.Windows.Forms.TreeView
+    Friend WithEvents TreeMenu As System.Windows.Forms.ContextMenuStrip
+    Friend WithEvents CopyToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents PasteRuleToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 End Class

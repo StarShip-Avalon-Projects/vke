@@ -93,6 +93,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module1.vb" />
+    <Compile Include="Rule Activation.Designer.vb">
+      <DependentUpon>Rule Activation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Rule Activation.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SynonymEditor.Designer.vb">
       <DependentUpon>SynonymEditor.vb</DependentUpon>
     </Compile>
@@ -152,6 +158,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Rule Activation.resx">
+      <DependentUpon>Rule Activation.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SynonymEditor.resx">
       <DependentUpon>SynonymEditor.vb</DependentUpon>
     </EmbeddedResource>
@@ -236,6 +245,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\File_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Untitled - 29.ico" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Add.ico" />
